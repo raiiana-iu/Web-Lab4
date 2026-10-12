@@ -2,7 +2,7 @@ class Task{
     constructor(id,title,completed){
         Object.defineProperty(this,"id",{
             value:id,
-            writeble: false,
+            writable: false,
             enumerable:true,
             configurable: false
 
@@ -28,5 +28,10 @@ class TaskManager {
 
     removeTask(taskId){
         this.tasks=this.tasks.filter(task => task.id !== taskId);
+    }
+     toggleTask(taskId){
+        this.tasks=this.tasks.map(task =>
+            task.id===taskId ? task.toggle() : task
+        );
     }
 }
