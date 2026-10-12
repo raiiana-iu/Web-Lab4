@@ -11,4 +11,3 @@ function fetchTasks() {
         }, 1500);
     });
 }
-```
